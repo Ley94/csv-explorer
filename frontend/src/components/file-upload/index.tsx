@@ -7,7 +7,6 @@ interface SuccessModalProps {
   onClose: () => void;
 }
 
-// Internal component - specific to FileUpload
 function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
   if (!isOpen) return null;
 
