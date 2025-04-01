@@ -123,8 +123,8 @@ dataRoutes.post("/upload", upload.single("file"), async (req, res) => {
 
       try {
         // Delete existing CSV data to maintain single-file storage
-        await prisma.csvFile.deleteMany();
         await prisma.csvEntry.deleteMany();
+        await prisma.csvFile.deleteMany();
 
         await prisma.$transaction(async (tx) => {
           // Create the file first
