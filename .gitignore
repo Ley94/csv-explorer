@@ -16,5 +16,11 @@ logs/
 # OS generated files
 .DS_Store
 
+# Testing
+**/coverage
+
+# Build outputs
+**/build
+
 # Temporary files
-backend/uploads/
+**/uploads/
