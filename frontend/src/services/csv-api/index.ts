@@ -1,4 +1,4 @@
-const API_BASE_URL =
+export const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:3001";
 
 export async function uploadCsv(
@@ -21,7 +21,9 @@ export async function uploadCsv(
 
     xhr.onload = () => {
       if (xhr.status === 201) {
-        resolve(JSON.parse(xhr.response));
+        setTimeout(() => {
+          resolve(JSON.parse(xhr.response));
+        }, 1000); // Delay for 1 second to ensure the progress bar reaches 100% before res
       } else {
         reject(new Error(xhr.response || "Upload failed"));
       }

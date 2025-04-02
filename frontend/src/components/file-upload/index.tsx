@@ -42,7 +42,6 @@ export default function FileUpload({ onUploadSuccess }: FileUploadProps) {
   };
 
   const handleSubmit = async () => {
-    console.log(selectedFile);
     if (!selectedFile) {
       setError("Please select a file to upload.");
       return;
@@ -71,6 +70,7 @@ export default function FileUpload({ onUploadSuccess }: FileUploadProps) {
       <p>Select a CSV file to begin searching its contents</p>
       <input
         type="file"
+        data-testid="file-input"
         accept=".csv"
         onChange={handleFileSelect}
         disabled={isUploading}
